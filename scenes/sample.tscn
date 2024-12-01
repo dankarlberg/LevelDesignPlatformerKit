@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://e6jwbml72r4o"]
+[gd_scene load_steps=26 format=3 uid="uid://e6jwbml72r4o"]
 
 [ext_resource type="Environment" uid="uid://bqnqgflivjvue" path="res://scenes/main-environment.tres" id="1_apxki"]
 [ext_resource type="PackedScene" uid="uid://dl2ed4gkybggf" path="res://objects/player.tscn" id="2_hgw2l"]
@@ -19,6 +19,11 @@
 [ext_resource type="FontFile" uid="uid://d0cxd77jybrcn" path="res://fonts/lilita_one_regular.ttf" id="25_vfu23"]
 [ext_resource type="Theme" uid="uid://d3avl0mr4r87l" path="res://themes/default_theme.tres" id="26_xw2uw"]
 [ext_resource type="Texture2D" uid="uid://dm50aa4qogm65" path="res://sprites/button_rectangle_depth_gloss.png" id="27_ct75u"]
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_nqlmi"]
+dof_blur_far_enabled = true
+dof_blur_far_distance = 15.0
+dof_blur_near_enabled = true
 
 [sub_resource type="LabelSettings" id="LabelSettings_ri8jt"]
 font = ExtResource("25_vfu23")
@@ -58,8 +63,9 @@ target = NodePath("../Player")
 
 [node name="Camera" type="Camera3D" parent="View"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10)
+attributes = SubResource("CameraAttributesPractical_nqlmi")
 current = true
-fov = 40.0
+fov = 37.8493
 
 [node name="SpotLight3D" type="SpotLight3D" parent="View"]
 transform = Transform3D(1, 9.63599e-05, 7.70288e-05, -0.000113864, 0.961315, 0.275453, -4.75145e-05, -0.275453, 0.961315, -0.0228109, 0.732155, 9.10847)
@@ -103,7 +109,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0.54, 0)
 [node name="Platforms" type="Node3D" parent="Level 1"]
 
 [node name="platform" parent="Level 1/Platforms" instance=ExtResource("16_82380")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="platform2" parent="Level 1/Platforms" instance=ExtResource("16_82380")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
