@@ -10,7 +10,11 @@ ground_curve = 0.171484
 sky_material = SubResource("ProceduralSkyMaterial_lg8b7")
 
 [resource]
+background_mode = 2
+background_color = Color(1, 1, 1, 1)
+background_energy_multiplier = 0.2
 sky = SubResource("Sky_7bk1c")
+ambient_light_color = Color(1, 1, 1, 1)
 tonemap_mode = 2
 ssr_enabled = true
 ssao_enabled = true
@@ -26,5 +30,7 @@ glow_levels/3 = 0.6
 glow_levels/5 = 0.0
 fog_light_color = Color(1, 1, 1, 1)
 volumetric_fog_enabled = true
-volumetric_fog_density = 0.1723
+volumetric_fog_density = 0.15
+volumetric_fog_emission = Color(1, 1, 1, 1)
+volumetric_fog_emission_energy = 0.0
 volumetric_fog_anisotropy = 0.9

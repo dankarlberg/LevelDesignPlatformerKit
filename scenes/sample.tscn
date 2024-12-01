@@ -61,11 +61,12 @@ current = true
 fov = 40.0
 
 [node name="SpotLight3D" type="SpotLight3D" parent="View"]
-transform = Transform3D(1, 9.63598e-05, 7.70288e-05, -0.000113864, 0.961315, 0.275452, -4.75145e-05, -0.275453, 0.961315, -0.0013361, 2.62374, 5.05489)
-light_energy = 17.975
+transform = Transform3D(1, 9.63599e-05, 7.70288e-05, -0.000113864, 0.961315, 0.275453, -4.75145e-05, -0.275453, 0.961315, -0.0228109, 0.732155, 9.10847)
+light_energy = 20.0
 light_indirect_energy = 16.0
 shadow_enabled = true
-spot_range = 10.104
+spot_range = 13.6503
+spot_angle = 50.686
 
 [node name="Level 1" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 0)
@@ -80,6 +81,10 @@ transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -15.808, 0.5, 4)
 look_at_door_when_opens = false
 
+[node name="SpotLight3D" type="SpotLight3D" parent="Level 1/door"]
+transform = Transform3D(1, 4.2222e-08, 3.2398e-08, -4.2222e-08, 0.258819, 0.965926, 3.2398e-08, -0.965926, 0.258819, 0.313888, 3.25729, 1.74268)
+light_energy = 10.0
+
 [node name="door2" parent="Level 1" instance=ExtResource("13_2py5d")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -15.917, 0.5, -4)
 look_at_door_when_opens = false
@@ -89,9 +94,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -20, 0)
 
 [node name="checkpoint2" parent="Level 1" instance=ExtResource("15_4nog2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0.54, 0)
-
-[node name="checkpoint2" parent="Level 1/checkpoint2" instance=ExtResource("15_4nog2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.6618, -10.0136, 4.2935)
 
 [node name="Platforms" type="Node3D" parent="Level 1"]
 
@@ -315,7 +317,8 @@ camera_attributes = SubResource("CameraAttributesPractical_u8ojw")
 
 [node name="Sun" type="DirectionalLight3D" parent="Lighting"]
 transform = Transform3D(-0.422618, -0.694272, 0.582564, 0, 0.642788, 0.766044, -0.906308, 0.323744, -0.271654, 0, 0, 0)
-light_energy = 8.941
+visible = false
+light_indirect_energy = 0.0
 light_volumetric_fog_energy = 0.0
 shadow_bias = 0.0
 shadow_blur = 0.0
