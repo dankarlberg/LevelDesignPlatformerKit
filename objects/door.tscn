@@ -9,6 +9,7 @@ size = Vector3(2, 2, 0.5)
 [node name="door" groups=["Door"] instance=ExtResource("1_ue8vn")]
 process_mode = 3
 script = ExtResource("2_lc1yq")
+look_at_door_when_opens = true
 
 [node name="door-rotate-large" parent="." index="0"]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
