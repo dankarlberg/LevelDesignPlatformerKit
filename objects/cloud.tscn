@@ -4,10 +4,11 @@
 [ext_resource type="Script" path="res://objects/cloud.gd" id="2_hugjq"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s8flt"]
-albedo_color = Color(0.787453, 0.834149, 0.163087, 1)
+albedo_color = Color(0.788235, 0.835294, 0.164706, 0.572549)
 emission_enabled = true
 emission = Color(0.661166, 0.710742, 0.305176, 1)
 emission_energy_multiplier = 0.1
+rim_enabled = true
 
 [node name="cube" instance=ExtResource("1_pjiy0")]
 script = ExtResource("2_hugjq")

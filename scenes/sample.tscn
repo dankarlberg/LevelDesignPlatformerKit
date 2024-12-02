@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://e6jwbml72r4o"]
+[gd_scene load_steps=31 format=3 uid="uid://e6jwbml72r4o"]
 
 [ext_resource type="Environment" uid="uid://bqnqgflivjvue" path="res://scenes/main-environment.tres" id="1_apxki"]
 [ext_resource type="PackedScene" uid="uid://dl2ed4gkybggf" path="res://objects/player.tscn" id="2_hgw2l"]
@@ -29,6 +29,21 @@ dof_blur_near_enabled = true
 
 [sub_resource type="SystemFont" id="SystemFont_uae4s"]
 
+[sub_resource type="SphereMesh" id="SphereMesh_pi3jn"]
+height = 0.5
+is_hemisphere = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_534on"]
+transparency = 1
+blend_mode = 1
+cull_mode = 1
+albedo_color = Color(0.486275, 0.658824, 1, 0.145098)
+metallic_specular = 0.0
+emission_enabled = true
+emission = Color(0.463924, 0.609279, 1, 1)
+emission_energy_multiplier = 16.0
+backlight = Color(1, 1, 1, 1)
+
 [sub_resource type="LabelSettings" id="LabelSettings_ri8jt"]
 font = ExtResource("25_vfu23")
 font_size = 128
@@ -56,12 +71,12 @@ dof_blur_far_distance = 0.01
 [node name="Main" type="Node3D"]
 
 [node name="Player" parent="." node_paths=PackedStringArray("view") instance=ExtResource("2_hgw2l")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0255094, 100.809, 48.0097)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.907, 23.6395, -410.322)
 view = NodePath("../View")
 
 [node name="View" type="Node3D" parent="." node_paths=PackedStringArray("target") groups=["View"]]
 process_mode = 3
-transform = Transform3D(1, -0.0002261, 0.000381565, 4.35231e-05, 0.90619, 0.42287, -0.000441379, -0.42287, 0.906189, 0.534913, 98.538, 47.4533)
+transform = Transform3D(1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965925, -18.3976, 21.3681, -410.879)
 script = ExtResource("3_xcrwe")
 target = NodePath("../Player")
 
@@ -84,9 +99,6 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 100
 
 [node name="platform-large2" parent="Level 1" instance=ExtResource("5_ly2vk")]
 transform = Transform3D(3.07508, 0, 0, 0, 3.07508, 0, 0, 0, 3.07508, -8.65284, -1, 0)
-
-[node name="flag" parent="Level 1" instance=ExtResource("7_dhnka")]
-transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, -8.94135, 0.502788, -5.0333)
 
 [node name="SpotLight3D2" type="SpotLight3D" parent="Level 1"]
 transform = Transform3D(-4.9738e-14, -1, -5.96046e-08, -4.37114e-08, -5.96046e-08, 1, -1, 5.32907e-14, -4.37114e-08, -10.5108, 4.81891, -0.0529497)
@@ -2255,6 +2267,123 @@ transform = Transform3D(-4.37114e-08, 0, -2.67585, 0, 1.57713, 0, 0.999999, 0, -
 [node name="wall13" parent="Level 7/Walls" instance=ExtResource("25_ow4b3")]
 transform = Transform3D(-4.37114e-08, 0, -2.67585, 0, 1.57713, 0, 0.999999, 0, -1.16966e-07, 3.7597, 0.700741, 7.49559)
 visible = false
+
+[node name="The Floor" type="Node3D" parent="."]
+transform = Transform3D(-3.33528e-08, 0, -0.763022, 0, 0.763022, 0, 0.763022, 0, -3.33528e-08, -24.6932, 5, -410)
+
+[node name="platform-grass-large-round6" parent="The Floor" instance=ExtResource("19_qait6")]
+transform = Transform3D(2, 0, 6.39488e-14, 0, 2, 0, -6.39488e-14, 0, 2, 0, 18.2571, 6.56069)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="The Floor/platform-grass-large-round6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.07731, 0)
+light_energy = 0.5
+light_indirect_energy = 3.0
+light_volumetric_fog_energy = 0.0
+
+[node name="platform-grass-large-round7" parent="The Floor" instance=ExtResource("19_qait6")]
+transform = Transform3D(2, 0, 7.81597e-14, 0, 2, 0, -7.81597e-14, 0, 2, 0, 18.2571, -7.07025)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="The Floor/platform-grass-large-round7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.07731, 0)
+light_energy = 0.5
+light_indirect_energy = 3.0
+light_volumetric_fog_energy = 0.0
+
+[node name="platform-grass-large-round8" parent="The Floor" instance=ExtResource("19_qait6")]
+transform = Transform3D(2, 0, 1.27898e-13, 0, 2, 0, -1.27898e-13, 0, 2, -11.8439, 15.5419, -1.09749)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="The Floor/platform-grass-large-round8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.07731, 0)
+light_energy = 0.2
+light_indirect_energy = 3.0
+light_volumetric_fog_energy = 0.0
+
+[node name="platform-grass-large-round9" parent="The Floor" instance=ExtResource("19_qait6")]
+transform = Transform3D(1.5, 0, 1.35003e-13, 0, 1.5, 0, -1.35003e-13, 0, 1.5, -22.4288, 16.8731, 1.54493)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="The Floor/platform-grass-large-round9"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.07731, 0)
+light_energy = 0.2
+light_indirect_energy = 3.0
+light_volumetric_fog_energy = 0.0
+
+[node name="platform-grass-large-round10" parent="The Floor" instance=ExtResource("19_qait6")]
+transform = Transform3D(1.5, 0, 1.35003e-13, 0, 1.5, 0, -1.35003e-13, 0, 1.5, -30.7617, 16.7649, -2.40798)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="The Floor/platform-grass-large-round10"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.07731, 0)
+light_energy = 0.2
+light_indirect_energy = 3.0
+light_volumetric_fog_energy = 0.0
+
+[node name="platform-grass-large-round11" parent="The Floor" instance=ExtResource("19_qait6")]
+transform = Transform3D(1.5, 0, 1.35003e-13, 0, 1.5, 0, -1.35003e-13, 0, 1.5, -38.996, 16.3998, -7.60758)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="The Floor/platform-grass-large-round11"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.07731, 0)
+light_energy = 0.2
+light_indirect_energy = 3.0
+light_volumetric_fog_energy = 0.0
+
+[node name="platform-grass-large-round12" parent="The Floor" instance=ExtResource("19_qait6")]
+transform = Transform3D(1.5, 0, 1.35003e-13, 0, 1.5, 0, -1.35003e-13, 0, 1.5, -47.7683, 16.375, -12.2762)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="The Floor/platform-grass-large-round12"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.07731, 0)
+light_energy = 0.2
+light_indirect_energy = 3.0
+light_volumetric_fog_energy = 0.0
+
+[node name="platform-grass-large-round13" parent="The Floor" instance=ExtResource("19_qait6")]
+transform = Transform3D(1.5, 0, 1.35003e-13, 0, 1.5, 0, -1.35003e-13, 0, 1.5, -58.4303, 15.9013, -10.8251)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="The Floor/platform-grass-large-round13"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.07731, 0)
+light_energy = 0.2
+light_indirect_energy = 3.0
+light_volumetric_fog_energy = 0.0
+
+[node name="platform-grass-large-round14" parent="The Floor" instance=ExtResource("19_qait6")]
+transform = Transform3D(1.5, 0, 1.35003e-13, 0, 1.5, 0, -1.35003e-13, 0, 1.5, -68.7137, 14.1554, -9.1848)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="The Floor/platform-grass-large-round14"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.07731, 0)
+light_energy = 0.2
+light_indirect_energy = 3.0
+light_volumetric_fog_energy = 0.0
+
+[node name="platform-grass-large-round15" parent="The Floor" instance=ExtResource("19_qait6")]
+transform = Transform3D(1.5, 0, 1.35003e-13, 0, 1.5, 0, -1.35003e-13, 0, 1.5, -77.8181, 13.554, -9.82091)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="The Floor/platform-grass-large-round15"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.07731, 0)
+light_energy = 0.2
+light_indirect_energy = 3.0
+light_volumetric_fog_energy = 0.0
+
+[node name="platform-grass-large-round16" parent="." instance=ExtResource("19_qait6")]
+transform = Transform3D(-3.21875e-07, 0, -7.36364, 0, 7.36364, 0, 7.36364, 0, -3.21875e-07, -16.8788, 5.19335, -492.847)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="platform-grass-large-round16"]
+transform = Transform3D(0.135802, 0, -8.88178e-16, 0, 0.135802, 0, 8.88178e-16, 0, 0.135802, 0, 2.14617, -0.251595)
+layers = 3
+light_energy = 16.0
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 0.0
+light_specular = 0.0
+light_cull_mask = 4294967293
+shadow_enabled = true
+distance_fade_begin = 0.0
+distance_fade_length = 416.96
+omni_range = 63.408
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="platform-grass-large-round16"]
+transform = Transform3D(4.68314, 0, 1.13687e-13, 0, 4.68314, 0, -1.13687e-13, 0, 4.68314, 0.000495911, 0.223638, -0.000119686)
+visibility_range_begin = 40.0
+visibility_range_begin_margin = 5.0
+visibility_range_fade_mode = 1
+mesh = SubResource("SphereMesh_pi3jn")
+surface_material_override/0 = SubResource("StandardMaterial3D_534on")
 
 [node name="HUD" type="CanvasLayer" parent="." groups=["HUD"]]
 process_mode = 3
