@@ -1,10 +1,12 @@
-[gd_scene load_steps=10 format=3 uid="uid://dl2ed4gkybggf"]
+[gd_scene load_steps=12 format=3 uid="uid://dl2ed4gkybggf"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_ffboj"]
 [ext_resource type="PackedScene" uid="uid://c0e27836xgmhi" path="res://objects/character.tscn" id="2_nero3"]
 [ext_resource type="Texture2D" uid="uid://8ggihh27mlrr" path="res://sprites/blob_shadow.png" id="3_0c7wt"]
 [ext_resource type="ArrayMesh" uid="uid://deu06eho4c74" path="res://vfx_meshes/dust.res" id="4_mvhqy"]
 [ext_resource type="AudioStream" uid="uid://cydjn1ct3hps2" path="res://sounds/walking.ogg" id="5_ics1s"]
+[ext_resource type="AudioStream" uid="uid://bt12udbxmrswl" path="res://sounds/624699__klankbeeld__room-tone-storm-005-200216_0115.wav" id="6_p7twx"]
+[ext_resource type="AudioStream" uid="uid://b3tynpuv5yddm" path="res://sounds/Music.wav" id="7_hceqp"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_gdq8c"]
 radius = 0.3
@@ -70,6 +72,17 @@ scale_amount_curve = SubResource("Curve_xh1e2")
 stream = ExtResource("5_ics1s")
 volume_db = -5.0
 pitch_scale = 1.25
+autoplay = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_p7twx")
+volume_db = -10.0
+pitch_scale = 2.0
+autoplay = true
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_hceqp")
+volume_db = -10.0
 autoplay = true
 
 [editable path="Character"]

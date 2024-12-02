@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://c103w764iyekg"]
+
+[ext_resource type="PackedScene" uid="uid://bsrmqj84lksd7" path="res://models/core_models/cloud.glb" id="1_mowds"]
+[ext_resource type="Script" path="res://objects/cloud.gd" id="2_yscld"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_2a2xm"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s8flt"]
+albedo_color = Color(0.137255, 0.682353, 1, 1)
+emission_enabled = true
+emission = Color(0.686579, 0.544406, 0.296812, 1)
+emission_operator = 1
+rim_enabled = true
+
+[node name="cube" instance=ExtResource("1_mowds")]
+script = ExtResource("2_yscld")
+
+[node name="cube2" parent="." index="0"]
+mesh = SubResource("SphereMesh_2a2xm")
+surface_material_override/0 = SubResource("StandardMaterial3D_s8flt")
