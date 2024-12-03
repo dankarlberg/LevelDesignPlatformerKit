@@ -5,8 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://8ggihh27mlrr" path="res://sprites/blob_shadow.png" id="3_0c7wt"]
 [ext_resource type="ArrayMesh" uid="uid://deu06eho4c74" path="res://vfx_meshes/dust.res" id="4_mvhqy"]
 [ext_resource type="AudioStream" uid="uid://cydjn1ct3hps2" path="res://sounds/walking.ogg" id="5_ics1s"]
-[ext_resource type="AudioStream" uid="uid://bt12udbxmrswl" path="res://sounds/624699__klankbeeld__room-tone-storm-005-200216_0115.wav" id="6_p7twx"]
-[ext_resource type="AudioStream" uid="uid://b3tynpuv5yddm" path="res://sounds/Music.wav" id="7_hceqp"]
+[ext_resource type="AudioStream" uid="uid://dqae8x5goqh6f" path="res://sounds/ambient2.wav" id="6_6rang"]
+[ext_resource type="AudioStream" uid="uid://8xxaynog8bwh" path="res://sounds/roomtone.mp3" id="7_bsfb3"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_gdq8c"]
 radius = 0.3
@@ -74,14 +74,14 @@ volume_db = -5.0
 pitch_scale = 1.25
 autoplay = true
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("6_p7twx")
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_6rang")
 volume_db = -10.0
 pitch_scale = 2.0
 autoplay = true
 
-[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("7_hceqp")
+[node name="Roomtone" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_bsfb3")
 volume_db = -10.0
 autoplay = true
 
