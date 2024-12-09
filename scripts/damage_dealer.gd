@@ -13,7 +13,7 @@ func _process(_delta: float) -> void:
 
 func _on_body_entered(body: Node) -> void:
 	var dir_vector = body.global_position - global_position
-	body.velocity = dir_vector.normalized()*50
+	#body.velocity = dir_vector.normalized()*50
 	if not only_push:
 		await get_tree().create_timer(0.75).timeout
 		if body.has_method("player_died"):
